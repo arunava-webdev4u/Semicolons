@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AbstractControl, ValidatorFn } from '@angular/forms';
 
 @Component({
   selector: 'app-payment',

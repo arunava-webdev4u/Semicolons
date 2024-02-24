@@ -12,6 +12,8 @@ import { PaymentService } from '../../services/payment.service';
 })
 export class UpiComponent {
     upiPaymentForm: FormGroup;
+    fraudDetected: boolean = false;
+    showModal: boolean = false;
 
     constructor(private _paymentService: PaymentService, private _router: Router) {
         this.upiPaymentForm = new FormGroup({
@@ -21,12 +23,31 @@ export class UpiComponent {
         })
     }
 
+    closeModal() {
+        this.showModal = false;
+    }
+
     onSubmit() {
         this.upiPaymentForm.value.mode = "UPI"
         this._paymentService.pay(this.upiPaymentForm.value).subscribe((data) => {
+            this.showModal = true;
+
+            // Local Code
+            this.fraudDetected = true;
             console.log("Payment successful");
             console.log(data);
-            // this._router.navigateByUrl("/");
+
+            // Main Code
+            // if (data.data == "Legitimate Transaction") {
+            //     this.fraudDetected = false;
+            //     console.log("Payment successful");
+            //     console.log(data);
+            //     // this._router.navigateByUrl("/");
+            // } else {
+            //     this.fraudDetected = true;
+            //     console.log("WARNING: Potential fraud detected!");
+            //     console.log(data);
+            // }
         })
     }
 }
