@@ -13,9 +13,11 @@ import { PaymentComponent } from './payment/payment.component';
 import { CreditCardComponent } from './payment/credit-card/credit-card.component';
 import { DebitCardComponent } from './payment/debit-card/debit-card.component';
 import { UpiComponent } from './payment/upi/upi.component';
+import { LoginComponent } from './login/login.component';
 
 const routes:Routes = [
     { path: "", component: HomeComponent },
+    { path: "login", component: LoginComponent },
     {
         path: "payment",
         component: PaymentComponent,

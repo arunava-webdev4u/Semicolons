@@ -7,9 +7,17 @@ import { HttpClient } from '@angular/common/http';
 export class PaymentService {
     constructor(private _http: HttpClient) {}
 
-    upiPayment(payment: any) {
-        return this._http.post('http://localhost:3000/payments', payment);
-    }
+    // debitCardPayment(payment: any) {
+    //     return this._http.post('http://localhost:3000/payments', payment);
+    // }
+
+    // creditCardPayment(payment: any) {
+    //     return this._http.post('http://localhost:3000/payments', payment);
+    // }
+
+    // upiPayment(payment: any) {
+    //     return this._http.post('http://localhost:3000/payments', payment);
+    // }
 
     pay(payment: any) {
         return this._http.post('http://localhost:3000/payments', payment);
