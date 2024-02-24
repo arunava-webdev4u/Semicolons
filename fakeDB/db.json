@@ -1,79 +1,19 @@
 {
   "payments": [
     {
-      "id": "37af",
-      "amount": 2344,
+      "id": "0035",
+      "amount": 2000,
+      "upiId": "2432423asf",
       "mode": "UPI",
-      "nameOnCard": "Arunava",
-      "cardNumber": "423432423423",
-      "expiryDate": "234234",
-      "cvv": "234"
+      "transactionId": "DwK32MjjTw"
     },
     {
-      "id": "b9dc",
-      "amount": 2000,
+      "id": "0c44",
+      "amount": 20000,
+      "upiId": "87985784@ads",
       "mode": "UPI",
-      "nameOnCard": "Arunava Das",
-      "cardNumber": "892398723987324",
-      "expiryDate": {
-        "month": "324",
-        "year": "234"
-      },
-      "cvv": "23423"
-    },
-    {
-      "id": "745d",
-      "amount": 2000,
-      "mode": "debitCard",
-      "nameOnCard": "Arunava Das",
-      "cardNumber": "09238650356",
-      "expiryDate": {
-        "month": "87",
-        "year": "234"
-      },
-      "cvv": "234"
-    },
-    {
-      "id": "e84a",
-      "amount": 2000,
-      "mode": "UPI",
-      "nameOnCard": "Arunava Das",
-      "cardNumber": "4314143443",
-      "expiryDate": {
-        "month": "234",
-        "year": "234"
-      },
-      "cvv": "234"
-    },
-    {
-      "id": "5f33",
-      "amount": 234,
-      "mode": "debitCard",
-      "nameOnCard": "Arunava Das",
-      "cardNumber": "21342341234",
-      "expiryDate": {
-        "month": "34",
-        "year": "34"
-      },
-      "cvv": "234"
-    },
-    {
-      "id": "bbdd",
-      "amount": 2000,
-      "mode": "debitCard",
-      "nameOnCard": "Arunava Das",
-      "cardNumber": "123423245645",
-      "expiryDate": {
-        "month": "11",
-        "year": "11"
-      },
-      "cvv": "345"
-    },
-    {
-      "id": "760d",
-      "amount": 2000,
-      "upiId": "25425252525@asd",
-      "mode": "UPI"
+      "transactionId": "k59FWHUVC33RWYdKJ8JUijeXG",
+      "customerId": "CUST11012304"
     }
   ]
 }

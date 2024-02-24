@@ -24,8 +24,9 @@ export class UpiComponent {
     onSubmit() {
         this.upiPaymentForm.value.mode = "UPI"
         this._paymentService.pay(this.upiPaymentForm.value).subscribe((data) => {
+            console.log("Payment successful");
             console.log(data);
             // this._router.navigateByUrl("/");
-        });
+        })
     }
 }
