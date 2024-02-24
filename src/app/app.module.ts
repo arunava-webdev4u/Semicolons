@@ -39,7 +39,8 @@ const routes:Routes = [
     PaymentComponent,
     CreditCardComponent,
     DebitCardComponent,
-    UpiComponent
+    UpiComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

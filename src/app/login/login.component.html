@@ -1,10 +1,8 @@
 <div id="container" class="grid grid-cols-12 mt-16">
-    <!-- <main class="col-span-10 col-start-2 sm:col-span-4 sm:col-start-5 md:col-span-4  md:col-start-5 bg-white p-8 my-10 rounded-md drop-shadow-xl"> -->
-        
+    <main class="col-span-10 col-start-2 sm:col-span-8 sm:col-start-3 md:col-span-6  md:col-start-4 lg:col-span-4 lg:col-start-5 bg-white p-8 my-10 rounded-md drop-shadow-xl">
         <h1 class="text-3xl text-center mb-4 font-semibold">Login</h1>
-<!-- 
-        <form  (ngSubmit)="onSubmit()">
 
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
             <div class="mb-5">
                 <label for="username" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Username
@@ -16,13 +14,25 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
             </div>
-        
-            <button [disabled]="!loginForm.valid" type="submit" class="disabled:cursor-not-allowed disabled:bg-gray-400 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Pay
-            </button>
-        
-        </form>
 
-    </main> -->
-    <form></form>
+            <div class="mb-3">
+                <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    Password
+                </label>
+                <input
+                    formControlName="password"
+                    type="password"
+                    id="password"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                >
+            </div>
+
+            <p *ngIf="wrongCredentials" class="text-xs text-red-500 mb-3">Wrong Username or Password</p>
+
+            <button [disabled]="!loginForm.valid" type="submit" class="disabled:cursor-not-allowed disabled:bg-gray-400 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Login
+            </button>
+
+        </form>
+    </main>
 </div>

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { initFlowbite } from 'flowbite';
+
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +9,17 @@ import { initFlowbite } from 'flowbite';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'semicolon-project';
+    title = 'Fraud Detector';
+    // loginStatus: boolean = false;
+    @Input() data$: boolean | undefined;
 
-  ngOnInit(): void {
-    initFlowbite();
-  }
+    constructor(private _dataService: DataService) {}
+
+    ngOnInit(): void {
+        initFlowbite();
+        // this._dataService.data$.subscribe(data => {
+        //     this.loginStatus = data;
+        // });
+        console.log(this.data$);
+    }
 }
