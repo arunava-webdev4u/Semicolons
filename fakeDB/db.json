@@ -1,68 +1,46 @@
 {
   "payments": [
     {
-      "id": "486a",
+      "id": "495d",
       "amount": 2000,
+      "mode": "creditCard",
+      "nameOnCard": "Arunava Das",
+      "cardNumber": "7075029582039558",
+      "expiryDate": {
+        "month": "11",
+        "year": "2039"
+      },
+      "cvv": "234",
+      "transactionId": "E2cK8YOxtMnsXPEMWU5qLJ6X0",
+      "customerId": "CUST11012304",
+      "transactionDate": "2024-02-25",
+      "transactionTime": "01:47:05.724"
+    },
+    {
+      "id": "9894",
+      "amount": 2500,
       "mode": "debitCard",
       "nameOnCard": "Arunava Das",
-      "cardNumber": "01702489873",
+      "cardNumber": "1930828392989482",
       "expiryDate": {
-        "month": "32",
-        "year": "43"
+        "month": "4",
+        "year": "2027"
       },
-      "cvv": "123",
-      "transactionId": "LcAuOUmvm7rAuVXGaFNxamRmQ",
+      "cvv": "989",
+      "transactionId": "j1UBGLWHw2Hqe2HLKE6g1GgPi",
       "customerId": "CUST11012304",
       "transactionDate": "2024-02-25",
-      "transactionTime": "00:42:03.525"
+      "transactionTime": "01:48:01.417"
     },
     {
-      "id": "52f8",
-      "amount": 2300,
-      "mode": "debitCard",
-      "nameOnCard": "aasfa",
-      "cardNumber": "43242",
-      "expiryDate": {
-        "month": "23",
-        "year": "234"
-      },
-      "cvv": "2423",
-      "transactionId": "c7EafvLH4HvEfKpGpnZBDwfZi",
+      "id": "5a69",
+      "amount": 5000,
+      "upiId": "8283722848@ybl",
+      "mode": "UPI",
+      "transactionId": "dQ71HxJZ1zlsLAmY2ybdSJPqI",
       "customerId": "CUST11012304",
       "transactionDate": "2024-02-25",
-      "transactionTime": "00:46:01.330"
-    },
-    {
-      "id": "1496",
-      "amount": 1343,
-      "mode": "debitCard",
-      "nameOnCard": "afasd",
-      "cardNumber": "243",
-      "expiryDate": {
-        "month": "342",
-        "year": "324"
-      },
-      "cvv": "3423",
-      "transactionId": "o32tHysOfs6rpWPYuyVcxwFvR",
-      "customerId": "CUST11012304",
-      "transactionDate": "2024-02-25",
-      "transactionTime": "00:46:43.281"
-    },
-    {
-      "id": "bf95",
-      "amount": 3400,
-      "mode": "creditCard",
-      "nameOnCard": "asf",
-      "cardNumber": "asdfsfa",
-      "expiryDate": {
-        "month": "sdfa",
-        "year": "sdaf"
-      },
-      "cvv": "w324",
-      "transactionId": "CmSRxfawb1IIM8fi7k4Oqsc3v",
-      "customerId": "CUST11012304",
-      "transactionDate": "2024-02-25",
-      "transactionTime": "00:48:48.739"
+      "transactionTime": "01:48:39.419"
     }
   ]
 }
