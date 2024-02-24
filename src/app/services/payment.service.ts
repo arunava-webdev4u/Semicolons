@@ -20,13 +20,15 @@ export class PaymentService {
     // }
 
     pay(payment: any) {
-        // console.log("Processing Payment");
         const customerId = "CUST11012304"
         const transactionId = this.generateTransactionId(25);
+        const transactionDate = this.getTransactionDate();
+        const transactionTime = this.getTransactionTime();
+
         payment.transactionId = transactionId;
         payment.customerId = customerId;
-        
-        // console.log(payment);
+        payment.transactionDate = transactionDate;
+        payment.transactionTime = transactionTime;
 
         return this._http.post('http://localhost:3000/payments', payment);
     }
@@ -40,5 +42,26 @@ export class PaymentService {
         }
       
         return result;
+    }
+
+    getTransactionDate() {
+        const currentDate = new Date();
+
+        const year = currentDate.getFullYear();
+        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based
+        const day = currentDate.getDate().toString().padStart(2, '0');
+        
+        return `${year}-${month}-${day}`;
+    }
+
+    getTransactionTime() {
+        const currentDate = new Date();
+
+        const hours = currentDate.getHours().toString().padStart(2, '0');
+        const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+        const seconds = currentDate.getSeconds().toString().padStart(2, '0');
+        const milliseconds = currentDate.getMilliseconds().toString().padStart(3, '0');
+
+        return `${hours}:${minutes}:${seconds}.${milliseconds}`;
     }
 }
