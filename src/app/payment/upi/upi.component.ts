@@ -32,22 +32,22 @@ export class UpiComponent {
         this._paymentService.pay(this.upiPaymentForm.value).subscribe((data) => {
             this.showModal = true;
 
-            // Local Code
-            // this.fraudDetected = true;
-            // console.log("Payment successful");
-            // console.log(data);
+            //! Local Code
+            this.fraudDetected = true;
+            console.log("Payment successful");
+            console.log(data);
 
-            // Main Code
-            if (data.data == "Legitimate Transaction") {
-                this.fraudDetected = false;
-                console.log("Payment successful");
-                console.log(data);
-                // this._router.navigateByUrl("/");
-            } else {
-                this.fraudDetected = true;
-                console.log("WARNING: Potential fraud detected!");
-                console.log(data);
-            }
+            //! Main Code
+            // if (data.data == "Legitimate Transaction") {
+            //     this.fraudDetected = false;
+            //     console.log("Payment successful");
+            //     console.log(data);
+            //     // this._router.navigateByUrl("/");
+            // } else {
+            //     this.fraudDetected = true;
+            //     console.log("WARNING: Potential fraud detected!");
+            //     console.log(data);
+            // }
         })
     }
 }

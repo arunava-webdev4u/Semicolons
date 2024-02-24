@@ -20,12 +20,12 @@ export class DebitCardComponent {
             amount: new FormControl(null, [Validators.required]),
             mode: new FormControl(null),
             nameOnCard: new FormControl(null, [Validators.required]),
-            cardNumber: new FormControl(null, [Validators.required]),
+            cardNumber: new FormControl(null, [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/^[0-9]+$/) ]),
             expiryDate: new FormGroup({
-                month: new FormControl(null, [Validators.required]),
-                year: new FormControl(null, [Validators.required]),
+                month: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^[0-9]+$/)]),
+                year: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^[0-9]+$/)]),
             }),
-            cvv: new FormControl(null, [Validators.required]),
+            cvv: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern(/^[0-9]+$/)]),
         })
     }
 
@@ -34,26 +34,28 @@ export class DebitCardComponent {
     }
 
     onSubmit() {
+        console.log(this.debitCardPaymentForm.get('expiryDate')?.get('month'))
+        return;
         this.debitCardPaymentForm.value.mode = "debitCard"
         this._paymentService.pay(this.debitCardPaymentForm.value).subscribe((data) => {
             this.showModal = true;
 
-            // Local Code
+            //! Local Code
             // this.fraudDetected = false;
             // console.log("Payment successful");
             // console.log(data);
 
-            // Main Code
-            if (data.data == "Legitimate Transaction") {
-                this.fraudDetected = false;
-                console.log("Payment successful");
-                console.log(data);
-                // this._router.navigateByUrl("/");
-            } else {
-                this.fraudDetected = true;
-                console.log("WARNING: Potential fraud detected!");
-                console.log(data);
-            }
+            //! Main Code
+            // if (data.data == "Legitimate Transaction") {
+            //     this.fraudDetected = false;
+            //     console.log("Payment successful");
+            //     console.log(data);
+            //     // this._router.navigateByUrl("/");
+            // } else {
+            //     this.fraudDetected = true;
+            //     console.log("WARNING: Potential fraud detected!");
+            //     console.log(data);
+            // }
         })
     }
 }
