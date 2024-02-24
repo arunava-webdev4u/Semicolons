@@ -22,8 +22,8 @@ export class DebitCardComponent {
             nameOnCard: new FormControl(null, [Validators.required]),
             cardNumber: new FormControl(null, [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/^[0-9]+$/) ]),
             expiryDate: new FormGroup({
-                month: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^[0-9]+$/)]),
-                year: new FormControl(null, [Validators.required, Validators.minLength(2), Validators.maxLength(2), Validators.pattern(/^[0-9]+$/)]),
+                month: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(12), Validators.pattern(/^[0-9]+$/)]),
+                year: new FormControl(null, [Validators.required, Validators.min(1995), Validators.max(2040), Validators.pattern(/^[0-9]+$/)]),
             }),
             cvv: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern(/^[0-9]+$/)]),
         })

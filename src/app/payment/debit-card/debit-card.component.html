@@ -90,7 +90,7 @@
                             <span *ngIf="debitCardPaymentForm.get('expiryDate')?.get('year')?.errors!['required']">
                                 Expiry Date is required
                             </span>
-                            <span *ngIf="(debitCardPaymentForm.get('expiryDate')?.get('year')?.errors!['minlength'] || debitCardPaymentForm.get('expiryDate')?.get('year')?.errors!['maxlength'] || debitCardPaymentForm.get('expiryDate')?.get('year')?.errors!['pattern'])">
+                            <span *ngIf="(debitCardPaymentForm.get('expiryDate')?.get('year')?.errors!['min'] || debitCardPaymentForm.get('expiryDate')?.get('year')?.errors!['max'] || debitCardPaymentForm.get('expiryDate')?.get('year')?.errors!['pattern'])">
                                 Expiry date is not valid
                             </span>
                         </span>
@@ -101,7 +101,7 @@
                             <span *ngIf="debitCardPaymentForm.get('expiryDate')?.get('month')?.errors!['required']">
                                 Expiry Date is required
                             </span>
-                            <span *ngIf="(debitCardPaymentForm.get('expiryDate')?.get('month')?.errors!['minlength'] || debitCardPaymentForm.get('expiryDate')?.get('month')?.errors!['maxlength'] || debitCardPaymentForm.get('expiryDate')?.get('month')?.errors!['pattern'])">
+                            <span *ngIf="(debitCardPaymentForm.get('expiryDate')?.get('month')?.errors!['min'] || debitCardPaymentForm.get('expiryDate')?.get('month')?.errors!['max'] || debitCardPaymentForm.get('expiryDate')?.get('month')?.errors!['pattern'])">
                                 Expiry date is not valid
                             </span>
                         </span>

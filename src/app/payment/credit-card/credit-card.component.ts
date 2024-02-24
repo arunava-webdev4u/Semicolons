@@ -20,12 +20,12 @@ export class CreditCardComponent {
             amount: new FormControl(null, [Validators.required]),
             mode: new FormControl(null),
             nameOnCard: new FormControl(null, [Validators.required]),
-            cardNumber: new FormControl(null, [Validators.required]),
+            cardNumber: new FormControl(null, [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern(/^[0-9]+$/)]),
             expiryDate: new FormGroup({
-                month: new FormControl(null, [Validators.required]),
-                year: new FormControl(null, [Validators.required]),
+                month: new FormControl(null, [Validators.required, Validators.min(1), Validators.max(12), Validators.pattern(/^[0-9]+$/)]),
+                year: new FormControl(null, [Validators.required, Validators.min(1995), Validators.max(2040), Validators.pattern(/^[0-9]+$/)]),
             }),
-            cvv: new FormControl(null, [Validators.required]),
+            cvv: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(3), Validators.pattern(/^[0-9]+$/)]),
         })
     }
 

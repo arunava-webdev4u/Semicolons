@@ -19,26 +19,6 @@
                     id="amount"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 >
-                <!--* validation for mobile number -->
-                <!-- <span
-                    *ngIf="registerForm && registerForm.get('mobileNumber')!.errors && (registerForm.get('mobileNumber')!.dirty || registerForm.get('mobileNumber')!.touched)"
-                    class="text-red-500 text-xs"
-                >
-                    <span *ngIf="registerForm.get('mobileNumber')?.errors!['required']">
-                        Mobile number is required
-                    </span>
-                    <span *ngIf="((registerForm.get('mobileNumber')?.errors!['minlength'] || registerForm.get('mobileNumber')?.errors!['maxlength']) && (registerForm.get('mobileNumber')?.errors!['pattern']));else elseBlock">
-                        Please enter a valid Mobile number
-                    </span>
-                    <ng-template #elseBlock>
-                        <span *ngIf="registerForm.get('mobileNumber')?.errors!['minlength'] || registerForm.get('mobileNumber')?.errors!['maxlength']">
-                            Mobile number should contain 10 digits only
-                        </span>
-                        <span *ngIf="registerForm.get('mobileNumber')?.errors!['pattern']">
-                            Please enter a valid Mobile number
-                        </span>
-                    </ng-template>
-                </span> -->
             </div>
 
             <fieldset class="border border-gray-300 p-3 rounded-md  mb-4">
@@ -67,6 +47,18 @@
                         id="cardNumber"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     >
+                    <!--* validation for card number -->
+                    <span
+                    *ngIf="creditCardPaymentForm && creditCardPaymentForm.get('cardNumber')!.errors && (creditCardPaymentForm.get('cardNumber')!.dirty || creditCardPaymentForm.get('cardNumber')!.touched)"
+                    class="text-red-500 text-xs"
+                >
+                    <span *ngIf="creditCardPaymentForm.get('cardNumber')?.errors!['required']">
+                        Card number is required
+                    </span>
+                    <span *ngIf="(creditCardPaymentForm.get('cardNumber')?.errors!['minlength'] || creditCardPaymentForm.get('cardNumber')?.errors!['maxlength'] || creditCardPaymentForm.get('cardNumber')?.errors!['pattern'])">
+                        Please enter a valid Card number
+                    </span>
+                </span>
                 </div>
 
                 <div class="grid grid-cols-2 gap-5 mb-1">
@@ -90,6 +82,29 @@
                                 class="col-span-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             >
                         </form>
+                        <!--* validation for expiry date -->
+                        <span
+                            *ngIf="creditCardPaymentForm && creditCardPaymentForm.get('expiryDate')?.get('year')!.errors && (creditCardPaymentForm.get('expiryDate')?.get('year')!.dirty || creditCardPaymentForm.get('expiryDate')?.get('year')!.touched)"
+                            class="text-red-500 text-xs"
+                        >
+                            <span *ngIf="creditCardPaymentForm.get('expiryDate')?.get('year')?.errors!['required']">
+                                Expiry Date is required
+                            </span>
+                            <span *ngIf="(creditCardPaymentForm.get('expiryDate')?.get('year')?.errors!['min'] || creditCardPaymentForm.get('expiryDate')?.get('year')?.errors!['max'] || creditCardPaymentForm.get('expiryDate')?.get('year')?.errors!['pattern'])">
+                                Expiry date is not valid
+                            </span>
+                        </span>
+                        <span
+                            *ngIf="creditCardPaymentForm && creditCardPaymentForm.get('expiryDate')?.get('month')!.errors && (creditCardPaymentForm.get('expiryDate')?.get('month')!.dirty || creditCardPaymentForm.get('expiryDate')?.get('month')!.touched)"
+                            class="text-red-500 text-xs"
+                        >
+                            <span *ngIf="creditCardPaymentForm.get('expiryDate')?.get('month')?.errors!['required']">
+                                Expiry Date is required
+                            </span>
+                            <span *ngIf="(creditCardPaymentForm.get('expiryDate')?.get('month')?.errors!['min'] || creditCardPaymentForm.get('expiryDate')?.get('month')?.errors!['max'] || creditCardPaymentForm.get('expiryDate')?.get('month')?.errors!['pattern'])">
+                                Expiry date is not valid
+                            </span>
+                        </span>
                     </div>
 
                     <!--! CVV --------------------------------------->
@@ -99,10 +114,22 @@
                         </label>
                         <input
                             formControlName="cvv"
-                            type="text"
+                            type="password"
                             id="cvv"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         >
+                        <!--* validation for CVV -->
+                        <span
+                            *ngIf="creditCardPaymentForm && creditCardPaymentForm.get('cvv')!.errors && (creditCardPaymentForm.get('cvv')!.dirty || creditCardPaymentForm.get('cvv')!.touched)"
+                            class="text-red-500 text-xs"
+                        >
+                            <span *ngIf="creditCardPaymentForm.get('cvv')?.errors!['required']">
+                                CVV is required
+                            </span>
+                            <span *ngIf="(creditCardPaymentForm.get('cvv')?.errors!['minlength'] || creditCardPaymentForm.get('cvv')?.errors!['maxlength'] || creditCardPaymentForm.get('cvv')?.errors!['pattern'])">
+                                Please enter a valid CVV
+                            </span>
+                        </span>
                     </div>
                 </div>
             
