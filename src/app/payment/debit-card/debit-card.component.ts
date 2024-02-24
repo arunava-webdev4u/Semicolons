@@ -11,8 +11,9 @@ import { PaymentService } from '../../services/payment.service';
   styleUrls: ['./debit-card.component.css']
 })
 export class DebitCardComponent {
-    showForm = false;
     debitCardPaymentForm: FormGroup
+    fraudDetected: boolean = false;
+    showModal: boolean = false;
 
     constructor(private _paymentService: PaymentService, private _router: Router) {
         this.debitCardPaymentForm = new FormGroup({
@@ -28,11 +29,31 @@ export class DebitCardComponent {
         })
     }
 
+    closeModal() {
+        this.showModal = false;
+    }
+
     onSubmit() {
         this.debitCardPaymentForm.value.mode = "debitCard"
         this._paymentService.pay(this.debitCardPaymentForm.value).subscribe((data) => {
-            console.log(data);
-            // this._router.navigateByUrl("/");
-        });
+            this.showModal = true;
+
+            // Local Code
+            // this.fraudDetected = false;
+            // console.log("Payment successful");
+            // console.log(data);
+
+            // Main Code
+            if (data.data == "Legitimate Transaction") {
+                this.fraudDetected = false;
+                console.log("Payment successful");
+                console.log(data);
+                // this._router.navigateByUrl("/");
+            } else {
+                this.fraudDetected = true;
+                console.log("WARNING: Potential fraud detected!");
+                console.log(data);
+            }
+        })
     }
 }
